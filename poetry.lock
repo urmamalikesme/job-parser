@@ -4975,9 +4975,9 @@ test = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more_it
 type = ["pytest-mypy"]
 
 [extras]
-research = []
+dev = []
 
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<3.13"
-content-hash = "a25a3cbcadcbc9cce7cd68db5fc99d4e8e01e5bd72c49506ead6d069765c631b"
+content-hash = "72b530df4347d9f6358c6b8e6080e90e540d73d924bcb3fde81cb8ac35d00fb1"

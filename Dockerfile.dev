@@ -29,8 +29,8 @@ RUN poetry config system-git-client true
 COPY pyproject.toml poetry.lock* ./
 
 # install dependencies with retries
-RUN --mount=type=ssh poetry install --no-root --with dev --no-interaction --no-ansi -E research || \
-    (echo "First attempt failed, retrying..." && poetry install --no-root --with dev --no-interaction --no-ansi -E research)
+RUN --mount=type=ssh poetry install --no-root --with dev --no-interaction --no-ansi -E dev || \
+    (echo "First attempt failed, retrying..." && poetry install --no-root --with dev --no-interaction --no-ansi -E dev)
 
 # additional libs for jupyter for testing
 RUN poetry run pip install --default-timeout=600 \
@@ -43,4 +43,4 @@ RUN poetry run pip install --default-timeout=600 \
 # register kernel for Jupyter
 RUN poetry run python -m ipykernel install \
     --name=job-parser-kernel \
-    --display-name "job-parser-kernel-research (python 3.12)"
+    --display-name "job-parser-kernel-dev (python 3.12)"
