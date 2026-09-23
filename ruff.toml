@@ -1,0 +1,54 @@
+[format]
+quote-style = "double"
+
+[lint]
+select = [
+  "ANN",
+  "E",
+  "F",
+  "W",
+  "A",
+  "S",
+  "B",
+  "I",
+  "N",
+  "UP",
+  "BLE",
+  "FBT",
+  "COM",
+  "T100",
+  "ISC",
+  "LOG",
+  "PIE",
+  "T20",
+  "SIM",
+  "ARG",
+  "PTH",
+]
+ignore = [
+  "PTH123",
+  "D",      # Disable all docstring-related rules
+  # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  "E111",
+  "E114",
+  "E117",
+  "D206",
+  "D300",
+  "Q000",
+  "Q001",
+  "Q002",
+  "Q003",
+  "COM812",
+  "COM819",
+  "E501",
+  "SIM110", # decrease readability of code
+  "S101"
+]
+exclude = [".virtual_documents"]
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.flake8-annotations]
+mypy-init-return = true
+suppress-dummy-args = true

@@ -1,2 +1,1 @@
-# job-parser
-Job parser
+Job parser project

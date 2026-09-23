@@ -1,0 +1,30 @@
+{
+    "name": "job-parser-research",
+    "dockerComposeFile": ["../../docker-compose.research.yaml"],
+    "service": "research",
+    "workspaceFolder": "/app",
+    "mounts": [
+        "source=/run/host-services/ssh-auth.sock,target=/ssh-agent,type=bind"
+    ],
+    "remoteEnv": {
+        "SSH_AUTH_SOCK": "/ssh-agent"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python3"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.debugpy",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "github.vscode-github-actions",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode-remote.remote-containers",
+                "openai.chatgpt"
+            ]
+        }
+    },
+    "forwardPorts": [8886]
+}

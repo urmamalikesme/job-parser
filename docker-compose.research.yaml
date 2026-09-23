@@ -1,0 +1,17 @@
+services:
+  research:
+    build:
+      context: .
+      dockerfile: Dockerfile.research
+      ssh:
+        - default
+    container_name: job-parser
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=${PYTHONPATH}
+    volumes:
+      - ./:/app/
+    ports:
+      - "8886:8888"
+    command: jupyter lab --ip=0.0.0.0 --no-browser --allow-root
