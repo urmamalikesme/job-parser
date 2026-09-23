@@ -1,8 +1,8 @@
 services:
-  research:
+  dev:
     build:
       context: .
-      dockerfile: Dockerfile.research
+      dockerfile: Dockerfile.dev
       ssh:
         - default
     container_name: job-parser
